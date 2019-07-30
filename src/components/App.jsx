@@ -13,15 +13,23 @@ class App extends React.Component {
 
       alone: exampleVideoData[0],
       inList: exampleVideoData,
+      clicked: ''
 
+    }
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    console.log(e.target.textContent);
+    for (var i = 0; i < exampleVideoData.length; i++) {
+      if (exampleVideoData[i].snippet.title === e.target.textContent) {
+        this.setState({
+          alone: exampleVideoData[i]
+        })
+      }
     }
   }
 
-  onVideoTitleClick() {
-    this.setState({
-      alone:
-    })
-  }
 
   render() {
     return (
@@ -36,7 +44,7 @@ class App extends React.Component {
             <VideoPlayer video={this.state.alone} />
           </div>
           <div className="col-md-5">
-            <VideoList videos={this.state.inList} />
+            <VideoList videos={this.state.inList} handleClick={this.handleClick} />
           </div>
         </div>
       </div>
