@@ -3,6 +3,7 @@ import YOUTUBE_API_KEY from '../../src/config/youtube.js';
 import exampleVideoData from '../../src/data/exampleVideoData.js';
 
 var getURLSearchParams = function(url) {
+  console.log('url is ' + url);
   return url
     .split('?')[1]
     .split('&')
