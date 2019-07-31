@@ -2,7 +2,7 @@ import YOUTUBE_API_KEY from '../config/youtube.js';
 var searchYouTube = (options, callback) => {
   // TODO
   var newOptions = {
-    part: 'snippet',
+    part: 'snippet, id',
     key: options.key,
     q: options.query, // search string
     maxResults: options.max

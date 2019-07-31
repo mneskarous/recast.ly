@@ -6,6 +6,8 @@ import VideoPlayer from './VideoPlayer.js';
 
 import searchYouTube from '../lib/searchYouTube.js';
 
+import Search from './Search.js';
+
 class App extends React.Component {
   constructor(props) {
 
@@ -15,10 +17,12 @@ class App extends React.Component {
 
       alone: exampleVideoData[0],
       inList: exampleVideoData,
-      clicked: ''
+      clicked: '',
+      changed: ''
 
     }
     this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleClick(e) {
@@ -32,13 +36,20 @@ class App extends React.Component {
     }
   }
 
+  handleChange(e) {
+    console.log('changing');
+    this.setState({
+      changed: e.target.value
+    })
+  }
+
 
   render() {
     return (
       <div>
         <nav className="navbar">
           <div className="col-md-6 offset-md-3">
-            <div><h5><em>search</em> view goes here</h5></div>
+            <Search changed = {this.state.changed} handleChange = {this.handleChange}/>
           </div>
         </nav>
         <div className="row">
