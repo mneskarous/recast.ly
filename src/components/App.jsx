@@ -49,11 +49,7 @@ class App extends React.Component {
       <div>
         <nav className="navbar">
           <div className="col-md-6 offset-md-3">
-<<<<<<< HEAD
-            < Search />
-=======
             <Search changed = {this.state.changed} handleChange = {this.handleChange}/>
->>>>>>> 5d17ef1d601db7aa92ec06feaa330731e285a3b0
           </div>
         </nav>
         <div className="row">
